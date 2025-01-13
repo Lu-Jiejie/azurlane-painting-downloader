@@ -1,0 +1,67 @@
+{
+  "name": "azurlane-painting-downloader",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.15.3",
+  "description": "pkg-description",
+  "author": "Lu-Jiejie <lu-jiejie@outlook.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/Lu-Jiejie/azurlane-painting-downloader#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lu-Jiejie/azurlane-painting-downloader.git"
+  },
+  "bugs": "https://github.com/Lu-Jiejie/azurlane-painting-downloader/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "lint": "eslint .",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "nr build",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.14.0",
+    "@types/node": "^20.17.12",
+    "bumpp": "^9.10.0",
+    "eslint": "^9.18.0",
+    "esno": "^4.8.0",
+    "lint-staged": "^15.3.0",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.7.3",
+    "unbuild": "^3.3.0",
+    "vitest": "^2.1.8"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
