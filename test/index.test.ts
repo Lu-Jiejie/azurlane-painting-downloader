@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest'
+import { fetchSkinJson } from '../src/fetch'
 
-describe('test', () => {
-  it('should work', () => {
-    expect(1).toBe(1)
+describe.skip('test', () => {
+  it('should work', async () => {
+    expect(await fetchSkinJson('yanusi_6')).toMatchSnapshot()
   })
 })

@@ -63,5 +63,10 @@
   },
   "lint-staged": {
     "*": "eslint --fix"
+  },
+  "dependencies": {
+    "ky": "^1.7.4",
+    "picocolors": "^1.1.1",
+    "sharp": "^0.33.5"
   }
 }
